@@ -1,0 +1,80 @@
+<!--
+
+	kaikki <style> osioiden sisällä olevat osaset ovat CSS kieltä. Tätä kieltä käytetään sivustojen muotoiluun oman maun mukaan.
+	
+	<div> osioita voi käyttää helpottaakseen sijoittelua ja eri osien siirtelyä. Itse koen kaikki <div> osiot olevan laatikoita.
+	
+	<a> osioita käytetään linkkien tekemiseen
+	
+	<input> osio on aika yksiselitteinen. Ainoan käytetyn input osion sisällä lukee "hidden" joka piilottaa input osan itse sivustolta
+	
+	<script> osioiden sisältä löytyy JavaScriptiä. Tämä helpottaa tiedonsiirtoa ja käsittelyä
+	
+	<h1 h2 jne.> käytetään usein "otsikkoina" eri sivuilla
+	
+	<button> aika yksiselitteinen juttu.
+	
+	<img> osiota käytetään kuvien tuomiseen nettisivulle
+	
+-->
+
+
+<head>
+<style>
+	body {
+		background-image: url("invo.jpg");
+		background-size: 100% 100%;
+	}
+	button {
+		padding: 5px;
+	}
+</style>
+
+
+<body>
+
+
+	<div style="text-align:left; position:fixed; top:0; width:100%">
+		<a href="sorsa.html" style="font-size:50px">Sorsat</a>
+	</div>
+
+
+
+	<input id="maara" type="text" value="1" hidden/>
+	<script>
+	   localStorage['maara'] =
+		  document.getElementById('maara').value =
+			  parseInt(localStorage['maara'] || '0', 10) + 1;
+	</script>
+	
+	
+	<div style="text-align:center; margin-top: 20%">
+		<h1 style="text-align:center; color:red">Khyl vai ei?</h1>
+		<button style="position: absolute" id="gei">Kyl?</button>
+		<button style="margin-left: 60px" id="ei">Ei?</button>
+	</div>
+	
+	
+	
+	<script type="text/javascript">
+		document.getElementById("ei").onclick = function () {
+			location.href = "ei.html";
+		};
+		
+		document.getElementById("gei").onclick = function () {
+			location.href = "gei.html";
+		};
+	</script>
+	
+	
+	
+	<div style="text-align:center; position: fixed; bottom: 0; width: 100%; color:gray">
+		<p>Kävijälaskuri:<script type="text/javascript">document.write(localStorage['maara'])</script></p>
+		<p>Viimeisin päivitys: 5/5/2021</p>
+	</div>
+	
+	
+
+</body>
+
+</head>
